@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajkumar Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0A2463;
+            --secondary: #3E92CC;
+            --accent: #FF6B6B;
+            --light: #F5F7FA;
+            --dark: #2D3748;
+            --data: #5D3FD3;
+            --ecommerce: #FF9E44;
+            --travel: #2E8B57;
+            --ai: #9C27B0;
+            --social: #E91E63;
+            --powerbi: #F2C811;
+            --skill: #4A6FA5;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--light);
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header/Navbar */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--dark);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(10,36,99,0.9), rgba(62,146,204,0.7)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(36px, 6vw, 60px);
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .hero h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(20px, 3vw, 28px);
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        
+        .hero p {
+            font-size: clamp(16px, 2vw, 18px);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-data {
+            background-color: var(--data);
+            color: white;
+        }
+        
+        .btn-ecommerce {
+            background-color: var(--ecommerce);
+            color: white;
+        }
+        
+        .btn-travel {
+            background-color: var(--travel);
+            color: white;
+        }
+        
+        .btn-ai {
+            background-color: var(--ai);
+            color: white;
+        }
+        
+        .btn-social {
+            background-color: var(--social);
+            color: white;
+        }
+        
+        .btn-powerbi {
+            background-color: var(--powerbi);
+            color: var(--dark);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(32px, 5vw, 40px);
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .about-text h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            font-size: 16px;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .skill {
+            background-color: var(--skill);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .resume-download {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--skill);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3 i {
+            margin-right: 10px;
+            color: var(--skill);
+        }
+        
+        .skill-category ul {
+            list-style-type: none;
+        }
+        
+        .skill-category li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .skill-category li:before {
+            content: "•";
+            color: var(--skill);
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .project-content p {
+            font-size: 14px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .project-tag {
+            background-color: var(--light);
+            color: var(--dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .project-tag-data {
+            background-color: rgba(93,63,211,0.1);
+            color: var(--data);
+        }
+        
+        .project-tag-ecommerce {
+            background-color: rgba(255,158,68,0.1);
+            color: var(--ecommerce);
+        }
+        
+        .project-tag-travel {
+            background-color: rgba(46,139,87,0.1);
+            color: var(--travel);
+        }
+        
+        .project-tag-ai {
+            background-color: rgba(156,39,176,0.1);
+            color: var(--ai);
+        }
+        
+        .project-tag-social {
+            background-color: rgba(233,30,99,0.1);
+            color: var(--social);
+        }
+        
+        .project-tag-powerbi {
+            background-color: rgba(242,200,17,0.1);
+            color: var(--powerbi);
+        }
+        
+        .project-features {
+            margin-top: 15px;
+            flex-grow: 1;
+        }
+        
+        .project-features h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .project-features ul {
+            padding-left: 20px;
+            font-size: 14px;
+            color: var(--dark);
+        }
+        
+        .project-features li {
+            margin-bottom: 5px;
+        }
+        
+        .project-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .contact .section-title h2 {
+            color: white;
+        }
+        
+        .contact .section-title h2:after {
+            background-color: white;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-icon {
+            font-size: 30px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .contact-item h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item p {
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        footer p {
+            font-size: 14px;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow: auto;
+            padding: 60px 20px;
+        }
+        
+        .modal-content {
+            background-color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .modal-img {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-body h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .modal-body p {
+            font-size: 16px;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .modal-features {
+            margin: 20px 0;
+        }
+        
+        .modal-features h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .modal-features ul {
+            padding-left: 20px;
+            font-size: 14px;
+            color: var(--dark);
+        }
+        
+        .modal-tech {
+            margin: 20px 0;
+        }
+        
+        .modal-tech h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links a {
+                margin: 15px 0;
+                font-size: 18px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero {
+                text-align: center;
+            }
+            
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .project-actions {
+                flex-direction: column;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Rajkumar<span> R K</span></div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Aspiring Software Engineer & Tech Explorer</h1>
+            <h2>Crafting Code. Connecting Systems. Creating Impact.</h2>
+            <p>I build smart, scalable web apps and intelligent data pipelines using modern technologies.<br>
+            Skilled in the MERN stack, React Native, and Microsoft Fabric.<br>
+            Fueled by curiosity, I turn complex problems into elegant digital solutions.</p>
+            <div class="btn-container">
+                <a href="#projects" class="btn btn-primary">View My Projects</a>
+                <a href="#skills" class="btn btn-secondary">Explore Skills</a>
+                <a href="rkresume.pdf" class="btn btn-data" download>
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Profile Summary</h3>
+                    <p>I am R. K. Rajkumar, a passionate Computer Science graduate from KLN College of Engineering with a strong foundation in software development and problem-solving. I specialize in full-stack web development with hands-on experience in the MERN stack (MongoDB, Express.js, React, Node.js), along with self-learned expertise in React Native for mobile development and Microsoft Fabric for modern data engineering workflows.</p>
+                    <p>Driven by curiosity and dedication, I have successfully completed multiple individual and team-based projects, including an e-commerce website (Nexora), a multi-transport booking system (Haru Booking Travels), and a Personal Voice Assistant using NLP and Python.</p>
+                    <p>I'm constantly seeking opportunities to expand my knowledge, build real-world solutions, and collaborate with innovative teams. My journey is defined by continuous learning, adaptability, and a desire to contribute to impactful digital experiences.</p>
+                    <div class="skills">
+                        <div class="skill">React</div>
+                        <div class="skill">Node.js</div>
+                        <div class="skill">MongoDB</div>
+                        <div class="skill">Express</div>
+                        <div class="skill">Python</div>
+                        <div class="skill">AI/ML</div>
+                        <div class="skill">React Native</div>
+                        <div class="skill">JWT Authentication</div>
+                        <div class="skill">Microsoft Fabric</div>
+                    </div>
+                </div>
+            </div>
+            <div class="resume-download">
+                <a href="rkresume.pdf" class="btn btn-data" download>
+                    <i class="fas fa-download"></i> Download Full Resume
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Front-end</h3>
+                    <ul>
+                        <li>HTML5, CSS3</li>
+                        <li>Bootstrap, Tailwind</li>
+                        <li>React, Redux</li>
+                        <li>React Native</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Back-end</h3>
+                    <ul>
+                        <li>Node.js, Express.js</li>
+                        <li>REST API Development</li>
+                        <li>JWT Authentication</li>
+                        <li>Bcrypt Hashing</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Databases</h3>
+                    <ul>
+                        <li>MongoDB</li>
+                        <li>MySQL</li>
+                        <li>Firebase</li>
+                        <li>Microsoft Fabric</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-mobile-alt"></i> Mobile</h3>
+                    <ul>
+                        <li>React Native</li>
+                        <li>Android Studio</li>
+                        <li>Expo</li>
+                        <li>Cross-platform Apps</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> AI & Data</h3>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Natural Language Processing</li>
+                        <li>TensorFlow</li>
+                        <li>Data Visualization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <ul>
+                        <li>VS Code</li>
+                        <li>Git, GitHub</li>
+                        <li>Postman</li>
+                        <li>Jupyter Notebook</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> BI & Analytics</h3>
+                    <ul>
+                        <li>Power BI</li>
+                        <li>Excel</li>
+                        <li>PySpark</li>
+                        <li>ETL Pipelines</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                <h3><i class="fas fa-cloud"></i> Microsoft Fabric</h3>
+                <ul>
+                    <li>OneLake (Data Lake)</li>
+                    <li>Data Engineering (Spark)</li>
+                    <li>Data Factory (ETL)</li>
+                    <li>Data Science (ML Models)</li>
+                    <li>Real-time Analytics</li>
+                    <li>Power BI Integration</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Power BI Blinkit Project -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-content">
+                        <h3>Power BI Blinkit Dashboard</h3>
+                        <p>Data visualization dashboard for Blinkit, India's fastest delivery app, showcasing key sales metrics.</p>
+                        <div class="project-tags">
+                            <span class="project-tag project-tag-powerbi">Power BI</span>
+                            <span class="project-tag project-tag-powerbi">Excel</span>
+                            <span class="project-tag project-tag-powerbi">Data Visualization</span>
+                            <span class="project-tag project-tag-powerbi">Business Intelligence</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Interactive dashboard with total sales, average sales, and ratings</li>
+                                <li>Outlet-wise performance analysis by location, type, and size</li>
+                                <li>Visualization of fat content and item type distributions</li>
+                                <li>Trend analysis of sales over establishment years</li>
+                            </ul>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-powerbi" onclick="openModal('blinkit')">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nexora E-commerce -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-content">
+                        <h3>Nexora E-commerce Platform</h3>
+                        <p>Advanced shopping platform with dual interfaces for users and administrators.</p>
+                        <div class="project-tags">
+                            <span class="project-tag project-tag-ecommerce">React</span>
+                            <span class="project-tag project-tag-ecommerce">Node.js</span>
+                            <span class="project-tag project-tag-ecommerce">MongoDB</span>
+                            <span class="project-tag project-tag-ecommerce">JWT Auth</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Secure JWT authentication with bcrypt password encryption</li>
+                                <li>Admin dashboard for order tracking and management</li>
+                                <li>User order history and payment tracking</li>
+                                <li>Email and SMS notifications</li>
+                            </ul>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-ecommerce" onclick="openModal('nexora')">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Voice Assistant -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-content">
+                        <h3>AI Personal Voice Assistant</h3>
+                        <p>Intelligent assistant with voice recognition and natural responses.</p>
+                        <div class="project-tags">
+                            <span class="project-tag project-tag-ai">Python</span>
+                            <span class="project-tag project-tag-ai">NLP</span>
+                            <span class="project-tag project-tag-ai">AI</span>
+                            <span class="project-tag project-tag-ai">Speech Recognition</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Custom-trained dataset for domain-specific knowledge</li>
+                                <li>Text-to-speech and speech-to-text capabilities</li>
+                                <li>Real-time weather updates and information retrieval</li>
+                                <li>Voice-controlled interface</li>
+                            </ul>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-ai" onclick="openModal('ai')">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Haru Booking Travels -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-content">
+                        <h3>Haru Booking Travels</h3>
+                        <p>Multi-transport booking system for various travel options.</p>
+                        <div class="project-tags">
+                            <span class="project-tag project-tag-travel">React</span>
+                            <span class="project-tag project-tag-travel">Node.js</span>
+                            <span class="project-tag project-tag-travel">MongoDB</span>
+                            <span class="project-tag project-tag-travel">Payment Gateway</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Booking for cars, buses, airplanes, ships, and trains</li>
+                                <li>Secure authentication similar to Nexora</li>
+                                <li>Payment processing and ticket management</li>
+                                <li>Real-time availability and booking confirmation</li>
+                            </ul>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-travel" onclick="openModal('haru')">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Meet the Talent -->
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-content">
+                        <h3>Meet the Talent</h3>
+                        <p>Social media platform combined with event booking for artists.</p>
+                        <div class="project-tags">
+                            <span class="project-tag project-tag-social">React Native</span>
+                            <span class="project-tag project-tag-social">Firebase</span>
+                            <span class="project-tag project-tag-social">Social Media</span>
+                            <span class="project-tag project-tag-social">Booking System</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Platform for artists to showcase talents (music, art, comedy)</li>
+                                <li>Social media features for user interaction</li>
+                                <li>Ticket booking system for live shows and events</li>
+                                <li>Cross-platform mobile application</li>
+                            </ul>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-social" onclick="openModal('talent')">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project Modals -->
+    <div id="blinkit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <div class="modal-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="modal-body">
+                <h3>Power BI Blinkit Dashboard</h3>
+                <p>A comprehensive data visualization dashboard for Blinkit, providing insights into sales performance, outlet metrics, and item analysis using Power BI and Excel.</p>
+                <div class="modal-features">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li><strong>Sales Metrics:</strong> Total sales, average sales, and average rating analysis</li>
+                        <li><strong>Outlet Analysis:</strong> Breakdown by location, type, and size</li>
+                        <li><strong>Item Insights:</strong> Fat content and item type distributions</li>
+                        <li><strong>Trend Visualization:</strong> Sales trends over establishment years</li>
+                        <li><strong>Interactive Filters:</strong> Dynamic filtering for outlet type, size, and location</li>
+                        <li><strong>Data Integration:</strong> Excel data processing and visualization in Power BI</li>
+                    </ul>
+                </div>
+                <div class="modal-tech">
+                    <h4>Technologies Used:</h4>
+                    <div class="project-tags">
+                        <span class="project-tag project-tag-powerbi">Power BI</span>
+                        <span class="project-tag project-tag-powerbi">Excel</span>
+                        <span class="project-tag project-tag-powerbi">Data Visualization</span>
+                        <span class="project-tag project-tag-powerbi">Business Intelligence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="nexora-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <div class="modal-img" style="background-image: url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="modal-body">
+                <h3>Nexora E-commerce Platform</h3>
+                <p>Nexora is a comprehensive e-commerce solution with dual interfaces for users and administrators. Built with modern security practices and a user-friendly interface.</p>
+                <div class="modal-features">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li><strong>Secure Authentication:</strong> JWT token-based authentication with bcrypt password hashing</li>
+                        <li><strong>Dual Interfaces:</strong> Separate dashboards for users and administrators</li>
+                        <li><strong>Admin Controls:</strong> Complete oversight of orders, products, and user management</li>
+                        <li><strong>User Experience:</strong> Intuitive shopping cart, order tracking, and payment processing</li>
+                        <li><strong>Notifications:</strong> Email and SMS alerts for orders, payments, and updates</li>
+                        <li><strong>Payment Integration:</strong> Secure payment gateway integration</li>
+                    </ul>
+                </div>
+                <div class="modal-tech">
+                    <h4>Technologies Used:</h4>
+                    <div class="project-tags">
+                        <span class="project-tag project-tag-ecommerce">React</span>
+                        <span class="project-tag project-tag-ecommerce">Node.js</span>
+                        <span class="project-tag project-tag-ecommerce">Express</span>
+                        <span class="project-tag project-tag-ecommerce">MongoDB</span>
+                        <span class="project-tag project-tag-ecommerce">JWT</span>
+                        <span class="project-tag project-tag-ecommerce">Bcrypt</span>
+                        <span class="project-tag project-tag-ecommerce">Payment Gateway</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ai-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <div class="modal-img" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="modal-body">
+                <h3>AI Personal Voice Assistant</h3>
+                <p>An intelligent voice assistant capable of understanding natural language queries and providing voice responses. The system is trained with custom datasets for specialized knowledge domains.</p>
+                <div class="modal-features">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li><strong>Voice Interaction:</strong> Speech recognition and text-to-speech capabilities</li>
+                        <li><strong>Custom Training:</strong> Domain-specific knowledge base for accurate responses</li>
+                        <li><strong>Real-time Information:</strong> Weather updates, news, and information retrieval</li>
+                        <li><strong>Multi-modal Interface:</strong> Voice and text input/output options</li>
+                        <li><strong>Context Awareness:</strong> Maintains conversation context for follow-up questions</li>
+                        <li><strong>API Integration:</strong> Connects with external services for expanded functionality</li>
+                    </ul>
+                </div>
+                <div class="modal-tech">
+                    <h4>Technologies Used:</h4>
+                    <div class="project-tags">
+                        <span class="project-tag project-tag-ai">Python</span>
+                        <span class="project-tag project-tag-ai">TensorFlow</span>
+                        <span class="project-tag project-tag-ai">NLP</span>
+                        <span class="project-tag project-tag-ai">SpeechRecognition</span>
+                        <span class="project-tag project-tag-ai">PyAudio</span>
+                        <span class="project-tag project-tag-ai">API Integration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="haru-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <div class="modal-img" style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="modal-body">
+                <h3>Haru Booking Travels</h3>
+                <p>A comprehensive multi-transport booking platform that enables users to book various transportation options with a unified interface and secure payment processing.</p>
+                <div class="modal-features">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li><strong>Multi-Transport Booking:</strong> Cars, buses, airplanes, ships, and trains</li>
+                        <li><strong>Secure Authentication:</strong> JWT-based authentication with bcrypt encryption</li>
+                        <li><strong>Real-time Availability:</strong> Up-to-date transportation schedules and seat availability</li>
+                        <li><strong>Payment Processing:</strong> Integrated payment gateway for secure transactions</li>
+                        <li><strong>Booking Management:</strong> User dashboard for managing reservations and tickets</li>
+                        <li><strong>Notifications:</strong> Booking confirmations and travel updates via email/SMS</li>
+                    </ul>
+                </div>
+                <div class="modal-tech">
+                    <h4>Technologies Used:</h4>
+                    <div class="project-tags">
+                        <span class="project-tag project-tag-travel">React</span>
+                        <span class="project-tag project-tag-travel">Node.js</span>
+                        <span class="project-tag project-tag-travel">Express</span>
+                        <span class="project-tag project-tag-travel">MongoDB</span>
+                        <span class="project-tag project-tag-travel">JWT</span>
+                        <span class="project-tag project-tag-travel">Payment Gateway</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="talent-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <div class="modal-img" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="modal-body">
+                <h3>Meet the Talent</h3>
+                <p>A hybrid social media and booking platform where talented individuals can showcase their skills and users can discover and book live performances.</p>
+                <div class="modal-features">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li><strong>Talent Profiles:</strong> Artists create profiles showcasing their skills and work</li>
+                        <li><strong>Social Interaction:</strong> Follow artists, comment, and engage with content</li>
+                        <li><strong>Event Booking:</strong> Purchase tickets for live shows and performances</li>
+                        <li><strong>Cross-platform:</strong> Mobile app available for iOS and Android</li>
+                        <li><strong>Notifications:</strong> Updates about new events and favorite artists</li>
+                        <li><strong>Secure Payments:</strong> In-app ticket purchasing with secure payment processing</li>
+                    </ul>
+                </div>
+                <div class="modal-tech">
+                    <h4>Technologies Used:</h4>
+                    <div class="project-tags">
+                        <span class="project-tag project-tag-social">React Native</span>
+                        <span class="project-tag project-tag-social">Firebase</span>
+                        <span class="project-tag project-tag-social">Redux</span>
+                        <span class="project-tag project-tag-social">Node.js</span>
+                        <span class="project-tag project-tag-social">MongoDB</span>
+                        <span class="project-tag project-tag-social">Payment Gateway</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+91 70108 86591</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>rajraju0291@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/rkrajkumar2002" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/rajkumar29" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-microsoft"></i></a>
+            </div>
+            <p>© 2024 Rajkumar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Modal functions
+        function openModal(project) {
+            document.getElementById(`${project}-modal`).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside of content
+        window.onclick = function(event) {
+            document.querySelectorAll('.modal').forEach(modal => {
+                if (event.target == modal) {
+                    closeModal();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
